@@ -7,6 +7,8 @@ import TaskPage from './pages/TaskPage.jsx';
 import DinheiroPage from './pages/DinheiroPage.jsx';
 import GerenciadorPage from './pages/GerenciadorPage.jsx';
 import MesPage from './pages/MesPage.jsx';
+import CalculadoraPage from './pages/CalculadoraPage.jsx';
+import GraficoPage from './pages/GraficoPage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -23,12 +25,20 @@ const router = createBrowserRouter([
     element: <TaskPage />,
   },
   {
-    path: "/dinheiro",
+    path: "/gerenciador_gasto",
     element: <DinheiroPage />,
   },
   {
     path: "/mes",
     element: <MesPage />
+  },
+  {
+    path: "/calculadora",
+    element: <CalculadoraPage />
+  },
+  {
+    path: "/grafico",
+    element: <GraficoPage />
   }
 ]);
 

@@ -4,7 +4,7 @@ function Total({ dias }) {
     }, 0);
 
     return (
-        <h1>Total: R$ {total}</h1>
+        <h1>Total: R$ {total.toFixed(2)}</h1>
     );
 }
 

@@ -6,7 +6,7 @@ function App() {
     const navigate = useNavigate();
 
   function onNavigateToDinheiroPage() {
-    navigate("/dinheiro");
+    navigate("/gerenciador_gasto");
   }
 
   function onNavigateToGerenciadorPage() {
