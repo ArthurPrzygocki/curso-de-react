@@ -1,13 +1,8 @@
-import { useSearchParams } from "react-router-dom";
 import Dia from "./Dia";
 
 function GastosDias({ dias, onDeleteDia }) {
-    const [searchParams] = useSearchParams();
-    const mes = searchParams.get("titleMes");
 
-    const diasDoMes = dias.filter((dia) => dia.mes === mes);
-
-    const diasAgrupados = diasDoMes.reduce((acc, gasto) => {
+    const diasAgrupados = dias.reduce((acc, gasto) => {
         const diaExistente = acc.find(
             (item) => item.dia === gasto.dia
         );
@@ -18,6 +13,7 @@ function GastosDias({ dias, onDeleteDia }) {
             acc.push({
                 dia: gasto.dia,
                 mes: gasto.mes,
+                ano: gasto.ano,
                 gastos: [gasto]
             });
         }

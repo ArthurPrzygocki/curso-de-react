@@ -1,19 +1,21 @@
 import { useNavigate } from "react-router-dom";
 
-function Meses({ mes }) {
+function Meses({ mes, ano }) {
     const navigate = useNavigate();
 
     function onSeeMesClick() {
-        const query = new URLSearchParams();
-        query.set("titleMes", mes);
+        if (!ano) {
+            alert("Selecione um ano primeiro.");
+            return;
+        }
 
-        navigate(`/mes?${query.toString()}`);
+        navigate(`/mes?ano=${ano}&mes=${mes}`);
     }
 
     return (
         <button
             onClick={onSeeMesClick}
-            className="bg-green-400 text-center w-32 text-white p-2 rounded-md"
+            className="w-32 rounded-xl bg-green-400 p-2 text-center text-white transition hover:bg-green-500"
         >
             {mes}
         </button>
